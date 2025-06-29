@@ -47,7 +47,7 @@ js_header = f"""// ==UserScript==
 
 js_content = js_header + '\nGM_addStyle(`\n\n' + css_cleaned + '\n`);'
 
-with open(js_file, "w", encoding="utf-8", newline="\r\n") as f:
+with open(js_file, "w", encoding="utf-8") as f:
     f.write(js_content)
 
 print(f"✅ JS généré : {js_file}")
