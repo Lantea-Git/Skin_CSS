@@ -1,0 +1,39 @@
+name: Générer UI_2023_JVC_JS.js automatiquement
+
+on:
+  push:
+    paths:
+      - UI_2023_JVC.user.css
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build_js:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cloner le dépôt
+        uses: actions/checkout@v3
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Lancer le script Python pour générer le .js
+        run: |
+          python .github/scripts/No_Round_JVC_CSS_Stylus_CSS_JS.py
+
+      - name: Afficher un aperçu
+        run: |
+          head -n 20 UI_2023_JVC_JS.js
+
+      - name: Commit et push si le fichier .js a changé
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add UI_2023_JVC_JS.js
+          git diff --cached --quiet || git commit -m "Auto: génération JS"
+          git push
