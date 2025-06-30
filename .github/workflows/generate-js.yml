@@ -24,7 +24,7 @@ jobs:
 
       - name: Lancer le script Python pour générer le .js
         run: |
-          python .github/scripts/No_Round_JVC_CSS_Stylus_CSS_JS.py
+            python No_Round_JVC_CSS_Stylus_CSS_JS.py
 
       - name: Afficher un aperçu
         run: |
