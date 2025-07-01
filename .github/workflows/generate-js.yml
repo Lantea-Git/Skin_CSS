@@ -6,6 +6,9 @@ on:
       - UI_2023_JVC.user.css
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build_js:
     runs-on: ubuntu-latest
