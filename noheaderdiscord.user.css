@@ -1,0 +1,74 @@
+/* ==UserStyle==
+@name           No_Header_Discord_Pub
+@namespace      noheaderdiscordpub
+@version        1.7.5
+@updateURL      https://userstyles.world/api/style/21588.user.css
+@description    Remove the ad tabs and the top layout on Discord.
+@author         Atlantis
+@license        CC0-1.0
+@preprocessor   stylus
+
+@var checkbox hide-sponso     "Hide also App/Sponsors (🎮) Button (Optional / Reversible⚙️)" 1
+
+==/UserStyle== */
+@-moz-document domain("discord.com") {
+
+    /*Optional-----*/
+    if (hide-sponso) {
+        /*Hide App/Sponsors 🎮*/
+        .app-launcher-entrypoint[class^="buttonContainer_"] {
+            display: none;
+        }
+    }
+    /*END-Optional-*/
+
+    /*redifine layout grid - hide header*/
+    .visual-refresh [class^="base_"] {
+        /*grid-template-rows: [top] 0px [titleBarEnd] min-content [noticeEnd] 1fr [end];*/
+        --custom-app-top-bar-height : 0px;
+    }
+    /* hide all bar elements without changing layout (for max compatibility with skins transparency) */
+    .visual-refresh [class^="bar_"] > *:not([class^="trailing_"]) {
+        visibility: hidden;
+    }
+
+    /*hide info_link for replace inbox at right*/
+    .visual-refresh [class^="trailing_"] > a:nth-of-type(1) {
+        display: none;
+    }
+
+    /*replace inbox*/
+    .visual-refresh [class^="trailing_"] {
+        /*top: 5px;*/
+        top: 24px;
+        z-index: 500;
+    }
+    .visual-refresh [class^="upperContainer__"] {
+        /*width: calc(100% - var(--space-search-inbox, 0px));*/
+        width: calc(100% - 40px);
+    }
+
+    /*check closed mod menu for space inbox*/
+    /*
+    .visual-refresh:not(:has([class^="guildSidebar_"])) {
+        --space-search-inbox: 40px;
+    }
+    */
+
+    /*hide inbox on mod menu*/
+    .visual-refresh [class^="guildSidebar_"] {
+        z-index: 600;
+    }
+
+    /*padding top left menu*/
+    .visual-refresh [class*="guilds_"]:nth-of-type(1) {
+        padding-top: 10px;
+    }
+
+    /*reduce margin-bottom text area*/
+    .visual-refresh [class^="channelTextArea_"] {
+        margin-bottom: 10px;
+    }
+
+
+}
