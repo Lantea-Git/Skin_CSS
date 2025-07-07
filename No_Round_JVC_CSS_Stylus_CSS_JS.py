@@ -52,7 +52,7 @@ js_header = f"""// ==UserScript==
 // @name         UI_2023_JVC_JS
 // @namespace    UI_2023_JVC_JS
 // @version      {version}
-// @description  {description}
+// @description  {description} (JS).
 // @author       {auteur}
 // @match        *://www.jeuxvideo.com/*
 // @grant        GM_addStyle
