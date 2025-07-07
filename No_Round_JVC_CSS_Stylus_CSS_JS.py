@@ -24,7 +24,7 @@ version = match.group(1)
 
 #description
 # match = re.search(r"@description\s+(.+)", css_content) 
-match = re.search(r"@description\s+([^.]+)", css_content) 
+match = re.search(r"@description\s+([^.]+)", css_content) #sans point
 description = match.group(1)
 
 #auteur
@@ -36,6 +36,7 @@ css_cleaned = re.sub(r"@-moz-document\s+domain\([^)]+\)\s*{", "", css_cleaned).s
 if css_cleaned.endswith("}"):
     css_cleaned = css_cleaned[:-1].strip()
 
+#virer if mais garder contenue
 css_cleaned = re.sub(
     r'^ *if\s*\(.*?\)\s*\{\n((?:.*?\n)*?)^\s*\}',
     lambda m: re.sub(r'^\s{4}', '', m.group(1), flags=re.MULTILINE).rstrip(),
