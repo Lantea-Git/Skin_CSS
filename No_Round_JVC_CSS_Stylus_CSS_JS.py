@@ -23,7 +23,8 @@ match = re.search(r"@version\s+([0-9.]+)", css_content)
 version = match.group(1)
 
 #description
-match = re.search(r"@description\s+(.+)", css_content)
+# match = re.search(r"@description\s+(.+)", css_content) 
+match = re.search(r"@description\s+([^.]+)", css_content) 
 description = match.group(1)
 
 #auteur
