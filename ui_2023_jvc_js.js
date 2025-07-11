@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UI_2023_JVC_JS
 // @namespace    UI_2023_JVC_JS
-// @version      5.5.7
+// @version      5.6.1
 // @description  Enleve les border radius abusifs de la mise à jour à jour décembre 2023 (JVC) (JS).
 // @author       Atlantis
 // @match        *://www.jeuxvideo.com/*
@@ -131,11 +131,13 @@ GM_addStyle(`
         border-radius: 0.3rem;
     }
 
+    /*
     .ads.anchorWrapper.js-tracking-widget * {
         border-radius: 0.3rem !important;
     }
+    */
 
-    .nouveau-msg * {
+    .nouveau-msg > a {
         border-radius: 0.3rem !important;
     }
 
@@ -168,7 +170,7 @@ GM_addStyle(`
         border-radius: 0.3rem;
     }
 
-    .wrapper-avatar * {
+    .wrapper-avatar img {
         border-radius: 0.3rem !important;
     }
 
@@ -213,7 +215,7 @@ GM_addStyle(`
     }
 
 
-    .liste-profil-general * {
+    .liste-profil-general .profile-link {
         border-radius: 0.4rem !important;
     }
 
@@ -231,11 +233,11 @@ GM_addStyle(`
         border-radius: 0.4rem;
     }
 
-    .action-bar * {
+    .action-bar .btn {
         border-radius: 5.5px !important;
     }
 
-    .action-center * {
+    .action-bar .btn-25-msg {
         border-radius: 0.3rem !important;
     }
 
@@ -281,7 +283,9 @@ GM_addStyle(`
         border-radius: 0.3rem !important;
     }
 
-    .card--cover * {
-            border-radius: 0.4rem !important;
+    .card--cover .card-img,
+    .card--cover .card-img-overlay,
+    .card--cover .card__contentType {
+        border-radius: 0.4rem !important;
     }
 `);
