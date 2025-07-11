@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UI_2023_JVC_JS
 // @namespace    UI_2023_JVC_JS
-// @version      5.6.0
+// @version      5.5.7
 // @description  Enleve les border radius abusifs de la mise à jour à jour décembre 2023 (JVC) (JS).
 // @author       Atlantis
 // @match        *://www.jeuxvideo.com/*
@@ -34,8 +34,8 @@ GM_addStyle(`
         border-radius: 0.3rem;
     }
 
-    .bg-danger
-    .toast {
+    .toast
+    .alert {
         border-radius: 0.3rem !important;
     }
 
@@ -131,13 +131,11 @@ GM_addStyle(`
         border-radius: 0.3rem;
     }
 
-    /*
     .ads.anchorWrapper.js-tracking-widget * {
         border-radius: 0.3rem !important;
     }
-    */
 
-    .nouveau-msg > a {
+    .nouveau-msg * {
         border-radius: 0.3rem !important;
     }
 
@@ -170,7 +168,7 @@ GM_addStyle(`
         border-radius: 0.3rem;
     }
 
-    .wrapper-avatar img {
+    .wrapper-avatar * {
         border-radius: 0.3rem !important;
     }
 
@@ -215,7 +213,7 @@ GM_addStyle(`
     }
 
 
-    .liste-profil-general .profile-link {
+    .liste-profil-general * {
         border-radius: 0.4rem !important;
     }
 
@@ -233,11 +231,11 @@ GM_addStyle(`
         border-radius: 0.4rem;
     }
 
-    .action-bar .btn {
+    .action-bar * {
         border-radius: 5.5px !important;
     }
 
-    .action-bar .btn-25-msg {
+    .action-center * {
         border-radius: 0.3rem !important;
     }
 
@@ -283,9 +281,7 @@ GM_addStyle(`
         border-radius: 0.3rem !important;
     }
 
-    .card--cover .card-img,
-    .card--cover .card-img-overlay,
-    .card--cover .card__contentType {
-        border-radius: 0.4rem !important;
+    .card--cover * {
+            border-radius: 0.4rem !important;
     }
 `);
