@@ -1,26 +1,34 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        1.8.4
+@version        2.0.2
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var checkbox hide-sponso     "Hide also App/Sponsors (🎮) Button (Optional / Reversible⚙️)" 1
+@var checkbox hide-sponso     "Hide also App/Sponsors 🎮 " 1
+@var checkbox reduce-bottom-margin     "Reduce bottom margin   ➖" 1
 
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
 
-    /*Optional-----*/
+    /*Optional-(TOGGLEABLE)-*/
     if (hide-sponso) {
         /*Hide App/Sponsors 🎮*/
         .app-launcher-entrypoint[class^="buttonContainer_"] {
             display: none;
         }
     }
-    /*END-Optional-*/
+
+    /*reduce margin-bottom text area*/
+    if (reduce-bottom-margin) {
+        .visual-refresh [class^="channelBottomBarArea_"] > [class^="channelTextArea_"] {
+            margin-bottom: 10px;
+        }
+    }
+    /*END-Optional---------*/
 
     /*redifine layout grid - hide header*/
     .visual-refresh [class^="base_"] {
@@ -63,11 +71,6 @@
     /*padding top left menu*/
     .visual-refresh [class^="sidebar_"] > [class*="guilds_"] {
         padding-top: 10px;
-    }
-
-    /*reduce margin-bottom text area*/
-    .visual-refresh [class^="channelBottomBarArea_"] > [class^="channelTextArea_"] {
-        margin-bottom: 10px;
     }
 
 }
