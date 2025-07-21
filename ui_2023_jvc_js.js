@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UI_2023_JVC_JS
 // @namespace    UI_2023_JVC_JS
-// @version      5.6.1
+// @version      5.6.8
 // @description  Enleve les border radius abusifs de la mise à jour à jour décembre 2023 (JVC) (JS).
 // @author       Atlantis
 // @match        *://www.jeuxvideo.com/*
@@ -79,6 +79,7 @@ GM_addStyle(`
     }
 
     .survey__icon,
+    .layout__videoFooter,
     .postMessage__loader,
     .postMessage__icon {
         display: none;
@@ -91,27 +92,27 @@ GM_addStyle(`
         border-color: var(--jv-input-border-color) !important;
     }
 
-    .messageEditor__buttonEdit {
-        background-color: var(--jv-bg-color-light);
-        margin: 0;
-    }
 
-    .buttonsEditor {
-        margin: 0 0.625rem;
-        padding: 0.625rem 0 0.3125rem;
-    }
 
     .messageEditor__containerEdit {
         display: grid;
     }
 
-    /* VarCCS */
-    .messageEditor__buttonEdit {
-        order: -1;
-        border-top: none;
-        border-bottom: 0.0625rem solid var(--jv-border-color);
-    }
-    /* VarSCCS */
+        .messageEditor__buttonEdit {
+            order: -1;
+            border-top: none;
+            border-bottom: 0.0625rem solid var(--jv-border-color);
+        }
+
+        .messageEditor__buttonEdit {
+            background-color: var(--jv-bg-color-light);
+            margin: 0;
+        }
+
+        .buttonsEditor {
+            margin: 0 0.625rem;
+            padding: 0.625rem 0 0.3125rem;
+        }
 
     .messageEditor__containerPreview {
         background-color: inherit;
