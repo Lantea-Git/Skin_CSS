@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        2.2.1
+@version        3.8.0
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
@@ -9,27 +9,12 @@
 @preprocessor   stylus
 
 @var checkbox hide-sponso     "Hide also App/Sponsors 🎮 " 1
-@var checkbox reduce-bottom-margin     "Reduce bottom margin   ➖" 1
+@var checkbox reduce-bottom-margin     "Reduce bottom margin  ➖" 1
 
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
 
-    /*Optional-(TOGGLEABLE)-*/
-    if (hide-sponso) {
-        /*Hide App/Sponsors 🎮*/
-        .app-launcher-entrypoint[class^="buttonContainer_"] {
-            display: none;
-        }
-    }
-
-    /*reduce margin-bottom text area*/
-    if (reduce-bottom-margin) {
-        .visual-refresh [class^="channelBottomBarArea_"] > [class^="channelTextArea_"] {
-            margin-bottom: 10px;
-        }
-    }
-    /*END-Optional---------*/
-
+    /*-----BAR-HIDE-START------*/
     /*redifine layout grid - hide header*/
     .visual-refresh [class^="base_"] {
         /*grid-template-rows: [top] 0px [titleBarEnd] min-content [noticeEnd] 1fr [end];*/
@@ -56,10 +41,9 @@
         width: calc(100% - 40px);
     }
     /*not change space when right panel open*/
-    .visual-refresh div[class^="chat_"][class*="threadSidebarOpen_"] div[class^="upperContainer__"] {
+    .visual-refresh div[class*="threadSidebarOpen_"] div[class^="upperContainer__"] {
        width: 100% !important;
     }
-
 
     /*hide inbox on mod menu*/
     .visual-refresh [class^="guildSidebar_"] {
@@ -70,5 +54,21 @@
     .visual-refresh [class^="sidebar_"] > [class*="guilds_"] {
         padding-top: 10px;
     }
+    /*-----BAR-HIDE-END------*/
 
+    /*Optional-(TOGGLEABLE)-*/
+    if (hide-sponso) {
+        /*Hide App/Sponsors 🎮*/
+        .app-launcher-entrypoint[class^="buttonContainer_"] {
+            display: none;
+        }
+    }
+
+    /*reduce margin-bottom text area*/
+    if (reduce-bottom-margin) {
+        .visual-refresh [class^="channelBottomBarArea_"] > [class^="channelTextArea_"] {
+            margin-bottom: 10px;
+        }
+    }
+    /*END-Optional---------*/
 }
