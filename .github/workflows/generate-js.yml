@@ -4,7 +4,7 @@ name: Générer ui_2023_jvc_js.js automatiquement
 on:
   push:
     paths:
-      - ui_2023_jvc.user.css
+      - 'skin_jvc/ui_2023_jvc.user.css'
   workflow_dispatch:
 
 permissions:
@@ -25,11 +25,13 @@ jobs:
 
       - name: Lancer le script Python pour générer le .js
         run: |
-            python No_Round_JVC_CSS_Stylus_CSS_JS.py
+          python No_Round_JVC_CSS_Stylus_CSS_JS.py
+        working-directory: ./skin_jvc
 
       - name: Afficher un aperçu
         run: |
           head -n 20 ui_2023_jvc_js.js
+        working-directory: ./skin_jvc
 
       - name: Commit et push si le fichier .js a changé
         run: |
@@ -38,3 +40,4 @@ jobs:
           git add ui_2023_jvc_js.js
           git diff --cached --quiet || git commit -m "JVC Auto : CSS to JS"
           git push
+        working-directory: ./skin_jvc
