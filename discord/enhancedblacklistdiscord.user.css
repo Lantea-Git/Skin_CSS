@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.0.5
+@version        0.1.0
 @updateURL      https://userstyles.world/api/style/23481.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -10,8 +10,8 @@
 
 @var select better-blacklist     "Better Blacklist (Experimental)   🧹" {
     "Light": "1",
-    "Agressive": "2",
-    "CSS4 (CPU⚠️)": "4",
+    "Large": "2",
+    "CSS4 (CPU+)": "4",
     "Disable": "0",
 }
 @var checkbox hide-sponso     "Hide also App/Sponsors 🎮 " 1
