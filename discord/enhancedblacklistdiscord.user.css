@@ -1,0 +1,75 @@
+/* ==UserStyle==
+@name           Enhanced_Blacklist_Discord
+@namespace      enhancedblacklistdiscord
+@version        0.0.5
+@updateURL      https://userstyles.world/api/style/23481.user.css
+@description    Enhanced Blacklist for Discord.
+@author         Atlantis
+@license        CC0-1.0
+@preprocessor   stylus
+
+@var select better-blacklist     "Better Blacklist (Experimental)   🧹" {
+    "Light": "1",
+    "Agressive": "2",
+    "CSS4 (CPU⚠️)": "4",
+    "Disable": "0",
+}
+@var checkbox hide-sponso     "Hide also App/Sponsors 🎮 " 1
+
+
+==/UserStyle== */
+@-moz-document domain("discord.com") {
+
+    if (hide-sponso) {
+        /*Hide App/Sponsors 🎮*/
+        .app-launcher-entrypoint[class^="buttonContainer_"] {
+            display: none;
+        }
+    }
+
+    /* BETTER BLACK LIST (BETA/TEST) */
+    if (better-blacklist >= 1) {
+        /*HIDE BLOC MESSAGE with marging*/
+        .visual-refresh ol[class^="scrollerInner_"] [class^="blockedSystemMessage"] {
+          display: none;
+        }
+        /*HIDE PROFILE-POPOUT menu right (Content)*/
+        .user-profile-popout img[class^="preview_"] + div[class^="body__"] {
+            display: none;
+        }
+    }
+
+    if (better-blacklist >= 2) {
+        /*HIDE BLOC MESSAGE without marging MORE AGRESSIVE*/
+        .visual-refresh ol[class^="scrollerInner_"] > div[class^="groupStart__"] {
+          display: none;
+        }
+	}
+
+    if (better-blacklist == 2) {
+        /* HIDE CITATION BL*/
+        .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"],
+        .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"] ~ :not(.replyAvatar_) {
+            display: none;
+        }
+        /*catch spin bar in revert CSS*/
+        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-of-type(3) {
+             display: none;
+        }
+        /*HIDE PROFILE-POPOUT menu right MORE AGRESSIVE*/
+        .user-profile-popout div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"] {
+          display: none;
+        }
+    }
+
+    if (better-blacklist == 4) {
+        /* HIDE CITATION BL HAS:CSS4 */
+        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"]:has(> div[class^="replyBadge_"]) {
+            display: none;
+        }
+        /*HIDE PROFILE-POPOUT HAS:CSS4 */
+        .user-profile-popout:has(> div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"]) {
+            display: none;
+        }
+    }
+}
