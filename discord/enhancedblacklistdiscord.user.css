@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.2.0
+@version        0.2.2
 @updateURL      https://userstyles.world/api/style/23481.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -57,7 +57,7 @@
              display: none;
         }
 
-        /*revert show delete message CSS3*/
+        /* OVERRIDE CSS RULE value for delete message CSS3*/
         .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"]:nth-last-child(2),
         .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"] + div[class^="repliedTextPreview_"],
         .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-child(3) {
