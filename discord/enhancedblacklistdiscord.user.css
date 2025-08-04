@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.2.8
+@version        0.2.9
 @updateURL      https://userstyles.world/api/style/23481.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -37,6 +37,10 @@
         .user-profile-popout img[class^="preview_"] + div[class^="body__"] {
             display: none;
         }
+        /*HIDE PROFILE-MODAL-BL*/
+        .user-profile-modal-v2 > div[class^="inner_"] > div[class^="background_"] ~ div {
+            display : none;
+        }
     }
 
     if (better-blacklist >= 2) {
@@ -44,6 +48,13 @@
         .visual-refresh ol[class^="scrollerInner_"] > div[class^="groupStart__"] {
           display: none;
         }
+
+        /*HIDE PROFILE-MODAL-BL*/
+        /*
+        div[class^="root_"] > .user-profile-modal-v2:first-child {
+            display : none;
+        }
+        */
     }
 
     if (better-blacklist == 2) {
@@ -80,5 +91,12 @@
         .user-profile-popout:has(> div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"]) {
             display: none;
         }
+
+        /*HIDE PROFILE-MODAL-BL CC4*/
+        /* TOO COSUME FOR THE MOMENT
+        div[class^="backdrop_"]:has(+ div[class^="layer_"] > div > div[class^="root_"] > .user-profile-modal-v2:first-child) {
+            opacity : 0;
+        }
+        */
     }
 }
