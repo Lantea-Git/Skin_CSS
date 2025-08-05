@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        3.8.5
+@version        3.9.0
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
@@ -45,8 +45,9 @@
        width: 100% !important;
     }
 
-    /*hide inbox on mod menu*/
-    .visual-refresh [class^="guildSidebar_"] {
+    /*MOD menu, notice ON inbox*/
+    .visual-refresh [class^="guildSidebar_"],
+    .visual-refresh div[class^="bar_"] + div[class^="notice__"] {
         z-index: 600;
     }
 
