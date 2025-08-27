@@ -1,0 +1,30 @@
+name: Create branch from commit
+#.github/workflows/Branch_from_commit.yml
+
+permissions:
+   contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: "Commit SHA"
+        required: true
+      new_branch:
+        description: "New branch"
+        required: true
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (any branch)
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create and push new branch
+        run: |
+          git fetch origin
+          git checkout -b ${{ github.event.inputs.new_branch }} ${{ github.event.inputs.sha }}
+          git push origin ${{ github.event.inputs.new_branch }}
