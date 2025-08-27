@@ -38,6 +38,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add ui_2023_jvc_js.js
-          git diff --cached --quiet || git commit -m "JVC Auto : CSS to JS"
+          msg=$(git log -1 --pretty=%s) #titre commit
+          git diff --cached --quiet || git commit -m "$msg (JVC JS Version)"
           git push
         working-directory: ./skin_jvc
