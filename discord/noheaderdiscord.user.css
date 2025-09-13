@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        4.1.3
+@version        4.1.7
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
@@ -37,7 +37,7 @@
     }
     /*change space for inbox (before : 40px) */
     .visual-refresh div[class^="upperContainer__"] {
-        margin-right: 42px;
+        margin-right: 43px;
     }
     /* OVERRIDE CSS RULE when right panel is open */
     .visual-refresh div[class*="threadSidebarOpen_"] div[class^="upperContainer__"] {
@@ -65,12 +65,7 @@
     }
 
     /* FIX IN LAST OFFICIEL UPDATE */
-    /*
-    if (reduce-bottom-margin) {
-        .visual-refresh [class^="channelBottomBarArea_"] > [class^="channelTextArea_"] {
-            margin-bottom: 10px;
-        }
-    }
-    */
+    /* (reduce-bottom-margin) */
+
     /*END-Optional---------*/
 }
