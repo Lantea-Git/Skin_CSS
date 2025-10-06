@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UI_2023_JVC_JS
 // @namespace    UI_2023_JVC_JS
-// @version      6.0.0
+// @version      6.1.0
 // @description  Enleve les border radius abusifs de la mise à jour à jour décembre 2023 (JVC) (JS).
 // @author       Atlantis
 // @match        *://www.jeuxvideo.com/*
@@ -56,12 +56,9 @@ GM_addStyle(`
             border-radius: 0.4rem !important;
     }
 
-    form select[name="signalement_motif"] {
-        border-radius: 0.4rem !important;
-    }
-
-    .form-control[name="signalement_commentaire"] {
-        border-radius: 0.4rem !important;
+    .form-select,
+    .form-control {
+        border-radius: 0.4rem;
     }
 
     .modalWrapper__main {
@@ -226,10 +223,6 @@ GM_addStyle(`
     */
 
     .liste-profil-general .profile-link {
-        border-radius: 0.4rem !important;
-    }
-
-    select[name="filtre_notif"] {
         border-radius: 0.4rem !important;
     }
 
