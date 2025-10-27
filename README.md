@@ -17,6 +17,7 @@
   </a>
 </p>
 
+**[Source code](./discord/enhancedblacklistdiscord.user.css)**   
 <sub>**The skin of blacklist is now only on GitHub**, because it's not stable and I can’t update it anymore.</sub>    
 <sub>It has reached the limits of what is possible with only CSS...</sub>    
 <sub>I won’t use JavaScript, because it’s not safe with Discord’s rules.</sub>   
