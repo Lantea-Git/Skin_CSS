@@ -1,7 +1,8 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.3.3
+@version        0.3.6
+@updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
 @license        CC0-1.0
@@ -18,6 +19,8 @@
 
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
+
+    /* Code Source : https://github.com/Lantea-Git/Skin_CSS/blob/main/discord/enhancedblacklistdiscord.user.css */
 
     if (hide-sponso) {
         /*Hide App/Sponsors 🎮*/
@@ -91,8 +94,8 @@
         }
 
         /*HIDE PROFILE-MODAL-BL*/
-        div[class^="backdrop_"]:has(+ div[class^="layer_"] > div[class^="focusLock__"]:not([aria-labelledby]) > div[class*="rootWithShadow__"] > .user-profile-modal-v2:first-child) {
-            opacity : 0;
+        div[class^="scrim_"]:has(+ div[class^="layer_"] > div[class^="focusLock__"]:not([aria-labelledby]) > div[class*="rootWithShadow__"] > .user-profile-modal-v2:first-child) {
+            opacity : 0 !important;
         }
     }
 }
