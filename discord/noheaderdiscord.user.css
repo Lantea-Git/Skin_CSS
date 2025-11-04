@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        4.1.7
+@version        4.2.4
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var checkbox hide-sponso     "Hide also App/Sponsors 🎮 " 1
+@var checkbox hide-sponso     "Hide also App/Sponsors ❖ " 1
 
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
@@ -58,14 +58,11 @@
 
     /*Optional-(TOGGLEABLE)-*/
     if (hide-sponso) {
-        /*Hide App/Sponsors 🎮*/
+        /*Hide App/Sponsors ❖*/
         .app-launcher-entrypoint[class^="buttonContainer_"] {
             display: none;
         }
     }
-
-    /* FIX IN LAST OFFICIEL UPDATE */
-    /* (reduce-bottom-margin) */
 
     /*END-Optional---------*/
 }
