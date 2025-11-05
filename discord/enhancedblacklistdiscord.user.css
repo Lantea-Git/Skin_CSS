@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.3.6
+@version        0.4.3
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -14,20 +14,12 @@
     "Light": "1",
     "Disable": "0",
 }
-@var checkbox hide-sponso     "Hide also App/Sponsors 🎮 " 1
-
 
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
 
     /* Code Source : https://github.com/Lantea-Git/Skin_CSS/blob/main/discord/enhancedblacklistdiscord.user.css */
-
-    if (hide-sponso) {
-        /*Hide App/Sponsors 🎮*/
-        .app-launcher-entrypoint[class^="buttonContainer_"] {
-            display: none;
-        }
-    }
+    /* Others Skins : https://userstyles.world/user/Atlantis#styles */
 
     /* BETTER BLACK LIST (BETA/TEST) */
     if (better-blacklist >= 1) {
