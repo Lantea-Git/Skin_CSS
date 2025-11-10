@@ -1,15 +1,15 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        4.3.1
+@version        4.3.2
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var checkbox hide-sponso        "Hide also App/Sponsors in textarea ❖ " 0
 @var checkbox hide-gift-icon     "Hide also Nitro Popup in textarea 🎁" 0
+@var checkbox hide-sponso        "Hide also App/Sponsors in textarea ⊞ " 0
 
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
@@ -66,7 +66,7 @@
     }
 
     if (hide-sponso) {
-        /*Hide App/Sponsors ❖*/
+        /*Hide App/Sponsors ⊞*/
         .app-launcher-entrypoint[class^="buttonContainer_"] {
             display: none;
         }
