@@ -1,5 +1,7 @@
 # [Skin CSS](https://userstyles.world/user/Atlantis#styles)
 
+## Report Issue : [Here](../../issues)
+
 
 ## Skin Discord (UserStyles)
 
@@ -31,4 +33,3 @@
   </a>
 </p>
 
-## Report Issue : [Here](../../issues)
