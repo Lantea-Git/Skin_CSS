@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        4.3.3
+@version        4.7.0
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var checkbox hide-gift-icon     "Hide also Nitro Popup in textarea 🎁" 0
+@var checkbox hide-gift-icon     "Hide also Nitro Popup in textarea 🎁︎" 0
 @var checkbox hide-sponso        "Hide also App/Sponsors in textarea ❖ " 0
 
 ==/UserStyle== */
@@ -17,7 +17,7 @@
     /*-----BAR-HIDE-START------*/
     /*redifine layout grid - hide header*/
     .visual-refresh [class^="base_"] {
-        /*grid-template-rows: [top] 0px [titleBarEnd] min-content [noticeEnd] 1fr [end];*/
+        /*grid-template-rows: ... --custom-app-top-bar-height ...*/
         --custom-app-top-bar-height : 0px;
     }
     /* hide top bar elements without changing space (for max compatibility with skins transparency) */
@@ -25,21 +25,31 @@
         visibility: hidden;
     }
 
-    /*hide info_link for replace inbox at right*/
-    .visual-refresh [class^="trailing_"] > a:nth-of-type(1) {
+    /*hide "checkpoint" and info_link*/
+    .visual-refresh [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]),
+    .visual-refresh [class^="trailing_"] > a:first-of-type {
         display: none;
     }
-
     /*replace inbox*/
     .visual-refresh [class^="trailing_"] {
-        /*top: 5px;*/
         top: 24px;
         z-index: 500;
     }
-    /*change space for inbox (before : 40px) */
+
+    /*change space for inbox */
     .visual-refresh div[class^="upperContainer__"] {
         margin-right: 43px;
     }
+
+    /*!!CSS4 HAS OVERRIDE!!*/
+    .visual-refresh:has(> head) [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]) {
+        display: flex !important;
+    }
+    /*change space for inbox + bouton */
+    .visual-refresh:has([class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"])) div[class^="upperContainer__"] {
+        margin-right: 90px;
+    }
+
     /* OVERRIDE CSS RULE when right panel is open */
     .visual-refresh div[class*="threadSidebarOpen_"] div[class^="upperContainer__"] {
         margin-right: initial !important;
@@ -57,9 +67,8 @@
     }
     /*-----BAR-HIDE-END------*/
 
-    /*Optional-(TOGGLEABLE)-*/
     if (hide-gift-icon) {
-        /*Nitro gift popup textarea 🎁*/
+        /*Nitro gift popup textarea 🎁︎*/
         div[class^="buttons__"] > [class^="button__"][aria-haspopup="dialog"]:first-child {
             display: none;
         }
