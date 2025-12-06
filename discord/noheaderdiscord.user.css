@@ -1,15 +1,15 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        4.7.0
+@version        4.8.0
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var checkbox hide-gift-icon     "Hide also Nitro Popup in textarea 🎁︎" 0
-@var checkbox hide-sponso        "Hide also App/Sponsors in textarea ❖ " 0
+@var checkbox hide-support-events     "Only inBox in searchbar 📥︎" 0
+@var checkbox hide-sponso        "Hide also App and Nitro in textarea ❖/🎁︎" 0
 
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
@@ -26,27 +26,17 @@
     }
 
     /*hide "checkpoint" and info_link*/
-    .visual-refresh [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]),
-    .visual-refresh [class^="trailing_"] > a:first-of-type {
+    .visual-refresh [class^="bar_"] > [class^="trailing_"] > a:first-of-type {
         display: none;
     }
     /*replace inbox*/
-    .visual-refresh [class^="trailing_"] {
+    .visual-refresh [class^="bar_"] > [class^="trailing_"] {
         top: 24px;
         z-index: 500;
     }
 
     /*change space for inbox */
     .visual-refresh div[class^="upperContainer__"] {
-        margin-right: 43px;
-    }
-
-    /*!!CSS4 HAS OVERRIDE!!*/
-    .visual-refresh:has(> head) [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]) {
-        display: flex !important;
-    }
-    /*change space for inbox + bouton */
-    .visual-refresh:has([class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"])) div[class^="upperContainer__"] {
         margin-right: 90px;
     }
 
@@ -67,16 +57,24 @@
     }
     /*-----BAR-HIDE-END------*/
 
-    if (hide-gift-icon) {
-        /*Nitro gift popup textarea 🎁︎*/
-        div[class^="buttons__"] > [class^="button__"][aria-haspopup="dialog"]:first-child {
-            display: none;
+    /*Optional-(TOGGLEABLE)-*/
+    if (hide-support-events) {
+        /*Only inBox space in searchbar 📥︎*/
+        .visual-refresh [class^="bar_"] > [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]) {
+            display: none !important;
+        }
+        /*change space for inbox only (without : 90px) */
+        .visual-refresh div[class^="upperContainer__"] {
+            margin-right: 43px !important;
         }
     }
 
     if (hide-sponso) {
-        /*Hide App/Sponsors ❖*/
+        /*Hide App/Sponsors ❖ and Nitro 🎁︎ TEXTAREA*/
         .app-launcher-entrypoint[class^="buttonContainer_"] {
+            display: none;
+        }
+        div[class^="buttons__"] > [class^="button__"][aria-haspopup="dialog"]:first-child {
             display: none;
         }
     }
