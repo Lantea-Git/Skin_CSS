@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        4.7.0
+@version        4.8.0
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
@@ -41,14 +41,16 @@
         margin-right: 43px;
     }
 
-    /*!!CSS4 HAS OVERRIDE!!*/
-    .visual-refresh:has(> head) [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]) {
+    /* !///!!CSS4 HAS OVERRIDE!!///! */
+    /* Laggy (quick patch) */
+    .visual-refresh [class^="bar_"]:has(> div) [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]) {
         display: flex !important;
     }
     /*change space for inbox + bouton */
-    .visual-refresh:has([class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"])) div[class^="upperContainer__"] {
+    .visual-refresh [class^="bar_"]:has([class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"])) + [class^="content_"] div[class^="upperContainer__"] {
         margin-right: 90px;
     }
+    /* !///!!CSS4 HAS END!!///! */
 
     /* OVERRIDE CSS RULE when right panel is open */
     .visual-refresh div[class*="threadSidebarOpen_"] div[class^="upperContainer__"] {
