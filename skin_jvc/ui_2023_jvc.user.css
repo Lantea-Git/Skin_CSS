@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           UI_2023_JVC
 @namespace      https://www.jeuxvideo.com
-@version        6.1.2
+@version        6.3.2
 @updateURL      https://userstyles.world/api/style/17542.user.css
 @description    Enleve les border radius abusifs de la mise à jour à jour décembre 2023 (JVC).
 @author         Atlantis
@@ -47,11 +47,11 @@
 
 
     .quickAccessButton {
-            border-radius: 5.5px !important;
+        border-radius: 5.5px !important;
     }
 
     .card-img-top {
-            border-radius: 0.4rem !important;
+        border-radius: 0.4rem !important;
     }
 
     .form-select,
@@ -99,8 +99,7 @@
         display: grid;
     }
 
-    /* VCSS-START */
-    if (bar-top-mov) {
+    if (bar-top-mov) { /* JSCSS-ADD-START */
         .messageEditor__buttonEdit {
             order: -1;
             border-top: none;
@@ -114,10 +113,8 @@
 
         .buttonsEditor {
             margin: 0 0.625rem;
-            padding: 0.625rem 0 0.3125rem;
         }
-    }
-    /* VCSS-END */
+    } /* JSCSS-ADD-END */
 
     .messageEditor__containerPreview {
         background-color: inherit;
