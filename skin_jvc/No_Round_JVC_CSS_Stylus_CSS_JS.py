@@ -33,7 +33,7 @@ js_header = f"""// ==UserScript==
 // @description  {description} (JS).
 // @author       {auteur}
 // @match        *://www.jeuxvideo.com/*
-// @grant        GM_addStyle
+// @grant        none
 // @icon         https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/128px/1f7e7.png
 // @license      CC0-1.0
 // @run-at       document-start
@@ -74,7 +74,14 @@ for line in css_content.splitlines(True):
     css_result_split.append(line)
 css_content = "".join(css_result_split)
 
-js_content = js_header + '\nGM_addStyle(`' + css_content + '\n`);\n'
+# js_content = js_header + '\nGM_addStyle(`' + css_content + '\n`);\n'
+js_content = js_header + f"""
+const style = document.createElement("style");
+style.textContent = `
+{css_content}
+`;
+document.head.append(style);
+"""
 
 with open(js_file, "w", encoding="utf-8") as file:
     file.write(js_content)
