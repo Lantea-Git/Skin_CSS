@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        4.8.0
+@version        4.8.3
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
@@ -71,7 +71,8 @@
 
     if (hide-gift-icon) {
         /*Nitro gift popup textarea 🎁︎*/
-        div[class^="buttons__"] > [class^="button__"][aria-haspopup="dialog"]:first-child {
+        div[class^="buttons__"] > [class^="button__"][aria-haspopup="dialog"]:first-child,
+        div[class^="textArea_"] + [class^="buttons__"] > div:not(.expression-picker-chat-input-button):first-child {
             display: none;
         }
     }
