@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.4.3
+@version        0.5.0
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -24,51 +24,51 @@
     /* BETTER BLACK LIST (BETA/TEST) */
     if (better-blacklist >= 1) {
         /*HIDE BLOC MESSAGE with marging*/
-        .visual-refresh ol[class^="scrollerInner_"] [class^="blockedSystemMessage"] {
+        .visual-refresh ol[class*="scrollerInner"] [class*="blockedSystemMessage"] {
           display: none;
         }
         /*HIDE PROFILE-POPOUT menu right (Content)*/
-        .user-profile-popout img[class^="preview_"] + div[class^="body__"] {
+        .user-profile-popout img[class*="preview"] + div[class*="body"] {
             display: none;
         }
         /*HIDE PROFILE-MODAL-BL*/
-        .user-profile-modal-v2 > div[class^="inner_"] > div[class^="background_"] ~ div {
+        .user-profile-modal-v2 > div[class*="inner"] > div[class*="background"] ~ div {
             display : none;
         }
     }
 
     if (better-blacklist >= 2) {
         /*HIDE BLOC MESSAGE without marging MORE AGRESSIVE*/
-        .visual-refresh ol[class^="scrollerInner_"] > div[class^="groupStart__"] {
+        .visual-refresh ol[class*="scrollerInner"] > div[class*="groupStart"] {
           display: none;
         }
 
         /*HIDE PROFILE-MODAL-BL*/
-        div[class^="focusLock__"]:not([aria-labelledby]) > div[class*="rootWithShadow__"] > .user-profile-modal-v2:first-child {
+        div[class*="focusLock"]:not([aria-labelledby]) > div[class*="rootWithShadow"] > .user-profile-modal-v2:first-child {
             display : none;
         }
     }
 
     if (better-blacklist == 2) {
         /* HIDE CITATION BL*/
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"],
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"] ~ :not(.replyAvatar_) {
+        .visual-refresh ol[class*="scrollerInner"] div[class*="replyBadge"],
+        .visual-refresh ol[class*="scrollerInner"] div[class*="replyBadge"] ~ :not(.replyAvatar) {
             display: none;
         }
         /*catch spin bar in revert CSS3*/
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-of-type(3) {
+        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"] > div[class*="ClickableSpine"]:nth-last-of-type(3) {
              display: none;
         }
 
         /* OVERRIDE CSS RULE value for delete message CSS3*/
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"]:nth-last-child(2),
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"] + div[class^="repliedTextPreview_"],
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-child(3) {
+        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"] > div[class*="replyBadge"]:nth-last-child(2),
+        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"] > div[class*="replyBadge"] + div[class*="repliedTextPreview"],
+        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"] > div[class*="ClickableSpine"]:nth-last-child(3) {
              display: inherit !important;
         }
 
         /*HIDE PROFILE-POPOUT menu right MORE AGRESSIVE*/
-        .user-profile-popout div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"] {
+        .user-profile-popout div[class*="inner"] > div[class*="container"] > img[class*="preview"] {
              display: none;
         }
 
@@ -76,17 +76,17 @@
 
     if (better-blacklist == 4) {
         /* HIDE CITATION BL HAS:CSS4 */
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"]:has(> div[class^="replyBadge_"] + span[class^="username_"]) {
+        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"]:has(> div[class*="replyBadge"] + span[class*="username"]) {
             display: none;
         }
 
         /*HIDE PROFILE-POPOUT HAS:CSS4 */
-        .user-profile-popout:has(> div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"]) {
+        .user-profile-popout:has(> div[class*="inner"] > div[class*="container"] > img[class*="preview"]) {
             display: none;
         }
 
         /*HIDE PROFILE-MODAL-BL*/
-        div[class^="scrim_"]:has(+ div[class^="layer_"] > div[class^="focusLock__"]:not([aria-labelledby]) > div[class*="rootWithShadow__"] > .user-profile-modal-v2:first-child) {
+        div[class*="scrim"]:has(+ div[class*="layer"] > div[class*="focusLock"]:not([aria-labelledby]) > div[class*="rootWithShadow"] > .user-profile-modal-v2:first-child) {
             opacity : 0 !important;
         }
     }
