@@ -33,7 +33,11 @@ js_header = f"""// ==UserScript==
 // @description  {description} (JS).
 // @author       {auteur}
 // @match        *://www.jeuxvideo.com/*
-// @grant        none
+"""
+
+# js_header += "// @match        *://risibank.fr/*\n"
+
+js_header += """// @grant        none
 // @icon         https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/128px/1f7e7.png
 // @license      CC0-1.0
 // @run-at       document-start
