@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.5.0
+@version        0.5.7
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -32,14 +32,15 @@
             display: none;
         }
         /*HIDE PROFILE-MODAL-BL*/
-        .user-profile-modal-v2 > div[class*="inner"] > div[class*="background"] ~ div {
+        .user-profile-modal-v2 > div[class*="inner"] > div[class*="background"]:not([class*="backgroundImage"]) ~ div {
             display : none;
         }
     }
 
     if (better-blacklist >= 2) {
         /*HIDE BLOC MESSAGE without marging MORE AGRESSIVE*/
-        .visual-refresh ol[class*="scrollerInner"] > div[class*="groupStart"] {
+        .visual-refresh ol[class*="scrollerInner"] > div[class$="-groupStart"]:not([data-flash]),
+        .visual-refresh ol[class*="scrollerInner"] > div[class^="groupStart_"]:not([data-flash]) {
           display: none;
         }
 
