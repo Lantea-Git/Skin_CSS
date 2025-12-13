@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           UI_2023_JVC
 @namespace      https://www.jeuxvideo.com
-@version        6.3.5
+@version        6.3.8
 @updateURL      https://userstyles.world/api/style/17542.user.css
 @description    Enleve les border radius abusifs de la mise à jour à jour décembre 2023 (JVC).
 @author         Atlantis
@@ -9,6 +9,7 @@
 @preprocessor   stylus
 
 @var checkbox bar-top-mov     "Barre edition en haut (reversible)" 1
+@var checkbox hide__topInfo     "Masquer le bandeau harcelement (reversible)" 1
 
 ==/UserStyle== */
 @-moz-document domain("www.jeuxvideo.com") {
@@ -115,6 +116,12 @@
             margin: 0 0.625rem;
         }
     } /* JSCSS-ADD-END */
+
+    if (hide__topInfo) { /* JSCSS-DEL-START */
+        .messageEditor__topInfo {
+            display: none;
+        }
+    } /* JSCSS-DEL-END */
 
     .messageEditor__containerPreview {
         background-color: inherit;
