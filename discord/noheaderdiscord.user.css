@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        4.8.4
+@version        5.0.2
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
@@ -16,70 +16,70 @@
 
     /*-----BAR-HIDE-START------*/
     /*redifine layout grid - hide header*/
-    .visual-refresh [class^="base_"] {
+    .visual-refresh [class*="base"] {
         /*grid-template-rows: ... --custom-app-top-bar-height ...*/
         --custom-app-top-bar-height : 0px;
     }
     /* hide top bar elements without changing space (for max compatibility with skins transparency) */
-    .visual-refresh [class^="base_"] > [class^="bar_"] > *:not([class^="trailing_"]) {
+    .visual-refresh [class*="base"] > [class*="bar"] > *:not([class*="trailing"]) {
         visibility: hidden;
     }
 
     /*hide "checkpoint" and info_link*/
-    .visual-refresh [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]),
-    .visual-refresh [class^="trailing_"] > a:first-of-type {
+    .visual-refresh [class*="trailing"] > div[class*="button"][class*="iconWrapper"]:not([data-jump-section="global"]),
+    .visual-refresh [class*="trailing"] > a:first-of-type {
         display: none;
     }
     /*replace inbox*/
-    .visual-refresh [class^="trailing_"] {
+    .visual-refresh [class*="trailing"] {
         top: 24px;
         z-index: 500;
     }
 
     /*change space for inbox */
-    .visual-refresh div[class^="upperContainer__"] {
+    .visual-refresh div[class*="upperContainer"] {
         margin-right: 43px;
     }
 
     /* !///!!CSS4 HAS OVERRIDE!!///! */
     /* Laggy (quick patch) */
-    .visual-refresh [class^="bar_"]:has(> div) [class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"]) {
+    .visual-refresh [class*="bar"]:has(> div) [class*="trailing"] > div[class*="button"][class*="iconWrapper"]:not([data-jump-section="global"]) {
         display: flex !important;
     }
     /*change space for inbox + bouton */
-    .visual-refresh [class^="bar_"]:has([class^="trailing_"] > div[class^="button_"][class*="iconWrapper_"]:not([data-jump-section="global"])) + [class^="content_"] div[class^="upperContainer__"] {
+    .visual-refresh [class*="bar"]:has([class*="trailing"] > div[class*="button"][class*="iconWrapper"]:not([data-jump-section="global"])) + [class*="content"] div[class*="upperContainer"] {
         margin-right: 90px;
     }
     /* !///!!CSS4 HAS END!!///! */
 
     /* OVERRIDE CSS RULE when right panel is open */
-    .visual-refresh div[class*="threadSidebarOpen_"] div[class^="upperContainer__"] {
+    .visual-refresh div[class*="threadSidebarOpen"] div[class*="upperContainer"] {
         margin-right: initial !important;
     }
 
     /*MOD menu, notice ON inbox*/
-    .visual-refresh [class^="guildSidebar_"],
-    .visual-refresh div[class^="bar_"] + div[class^="notice__"] {
+    .visual-refresh [class*="guildSidebar"],
+    .visual-refresh div[class*="bar"] + div[class*="notice"] {
         z-index: 600;
     }
 
     /*margin top left menu*/
-    .visual-refresh [class^="sidebar_"] > [class*="guilds_"] {
+    .visual-refresh [class*="sidebar"] > [class*="guilds"] {
         margin-top: 10px;
     }
     /*-----BAR-HIDE-END------*/
 
     if (hide-gift-icon) {
         /*Nitro gift popup textarea 🎁︎*/
-        div[class^="buttons__"] > [class^="button__"][aria-haspopup="dialog"]:first-child,
-        div[class^="textArea_"] + [class^="buttons__"] > div:not(.expression-picker-chat-input-button):first-child {
+        div[class*="buttons"] > [class*="button"][aria-haspopup="dialog"]:first-child,
+        div[class*="textArea"] + [class*="buttons"] > div:not(.expression-picker-chat-input-button):first-child {
             display: none;
         }
     }
 
     if (hide-sponso) {
         /*Hide App/Sponsors ❖*/
-        .app-launcher-entrypoint[class^="buttonContainer_"] {
+        .app-launcher-entrypoint[class*="buttonContainer"] {
             display: none;
         }
     }
