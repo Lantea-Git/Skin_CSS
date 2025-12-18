@@ -24,7 +24,7 @@
 **[Source code](./discord/enhancedblacklistdiscord.user.css)**   
 <sub>**The skin of blacklist is now only on GitHub**, because it's not stable</sub>     
 <sub>and It has reached the limits of what is possible with only CSS...</sub>    
-
+<!--
 ## Skin JVC (UserStyles)
 <p>
   <a href="https://userstyles.world/style/17542/">
@@ -32,4 +32,4 @@
     <img src="https://badgen.net/badge/color/UI_2023/orange?label=&scale=2" alt="Skin_JVC">
   </a>
 </p>
-
+-->
