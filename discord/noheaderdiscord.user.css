@@ -1,13 +1,14 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        5.2.0
+@version        5.3.0
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
+@var checkbox only-inbox     "Only inbox in search bar 📥︎" 0
 @var checkbox hide-sponso    "Clean also Nitro/Sponsors in textarea  🎁︎❖ " 0
 
 ==/UserStyle== */
@@ -15,61 +16,64 @@
 
     /*-----BAR-HIDE-START------*/
 
-    /*redifine layout grid - hide header*/
+    /*Redifine Layout grid - hide header*/
     .visual-refresh [class*="base"] {
         /*grid-template-rows: ... --custom-app-top-bar-height ...*/
         --custom-app-top-bar-height : 0px;
     }
-    /* hide top bar elements without changing space (for max compatibility with skins transparency) */
+    /* hide top bar elements without changing space (Optimise compatibility with others transparency) */
     .visual-refresh [class*="base"] > [class*="bar"] > *:not([class*="trailing"]) {
         visibility: hidden;
     }
 
-    /*hide "checkpoint" and info_link*/
-    .visual-refresh [class*="trailing"] > div[class*="button"][class*="iconWrapper"]:not([data-jump-section="global"]),
-    .visual-refresh [class*="trailing"] > a:first-of-type {
+    /* Only inbox in "traling" */
+    .visual-refresh [class*="trailing"] > div:not([data-jump-section="global"]),
+    .visual-refresh [class*="trailing"] > a {
         display: none;
     }
-    /*replace inbox*/
+    /*Replace Inbox*/
     .visual-refresh [class*="trailing"] {
         top: 24px;
         z-index: 500;
     }
 
-    /*change space for inbox */
+    /*Change space for Inbox */
     .visual-refresh div[class*="upperContainer"] {
         margin-right: 43px;
     }
 
-    /* !///!!CSS4 HAS OVERRIDE!!///! */
-    /* Laggy (quick patch) */
-    .visual-refresh [class*="bar"]:has(> div) [class*="trailing"] > div[class*="button"][class*="iconWrapper"]:not([data-jump-section="global"]) {
-        display: flex !important;
-    }
-    /*change space for inbox + bouton */
-    .visual-refresh [class*="bar"]:has([class*="trailing"] > div[class*="button"][class*="iconWrapper"]:not([data-jump-section="global"])) + [class*="content"] div[class*="upperContainer"] {
-        margin-right: 90px;
-    }
-    /* !///!!CSS4 HAS END!!///! */
-
-    /* OVERRIDE CSS RULE when right panel is open */
+    /* OVERRIDE CSS RULE => MOD menu open => Clean space */
     .visual-refresh div[class*="threadSidebarOpen"] div[class*="upperContainer"] {
         margin-right: initial !important;
     }
 
-    /*MOD menu, notice ON inbox*/
+    /*MOD menu, notice above inbox*/
     .visual-refresh [class*="guildSidebar"],
     .visual-refresh div[class*="bar"] + div[class*="notice"] {
         z-index: 600;
     }
 
-    /*margin top left menu*/
+    /*Margin top left Serv Lists*/
     .visual-refresh [class*="sidebar"] > [class*="guilds"] {
         margin-top: 10px;
     }
     /*-----BAR-HIDE-END------*/
 
+
     /*---Optional---------*/
+
+    /* ADD boutons and spaces in search bar */
+    /* NEED :has() */
+    if (only-inbox != 1) {
+        /* Show other bouton when only-inbox is off */
+        .visual-refresh [class*="bar"]:has(> div) [class*="trailing"] > div[class*="button"][class*="iconWrapper"]:not([data-jump-section="global"]) {
+            display: flex !important;
+        }
+        /*ADD Space for Event bouton in search bar IF the bouton exist*/
+        .visual-refresh [class*="bar"]:has([class*="trailing"] > div[class*="button"][class*="iconWrapper"]:not([data-jump-section="global"])) + [class*="content"] div[class*="upperContainer"] {
+            margin-right: 90px;
+        }
+    }
 
     /* Clean text area */
     if (hide-sponso) {
@@ -82,5 +86,7 @@
             display: none;
         }
     }
+
     /*END-Optional---------*/
+
 }
