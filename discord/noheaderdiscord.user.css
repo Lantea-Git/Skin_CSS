@@ -1,15 +1,15 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        5.3.5
+@version        5.4.0
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var checkbox only-inbox     "Only inbox in search bar 📥︎" 0
-@var checkbox hide-sponso    "Clean also Nitro/Sponsors in textarea  🎁︎❖ " 0
+@var checkbox only_inbox     "Only inbox in search bar 📥︎" 0
+@var checkbox hide_sponso    "Clean also Nitro/Sponsors in textarea  🎁︎❖ " 0
 
 ==/UserStyle== */
 @-moz-document domain("discord.com") {
@@ -64,8 +64,8 @@
 
     /* ADD boutons and spaces in search bar */
     /* NEED :has() */
-    if (only-inbox != 1) {
-        /* Show other bouton when only-inbox is off */
+    if (only_inbox != 1) {
+        /* Show other bouton when only_inbox is off */
         .visual-refresh [class*="-bar"]:has(> div) [class*="-trailing"] > div[class*="-button"][class*="-iconWrapper"]:not([data-jump-section="global"]) {
             display: flex !important;
         }
@@ -76,7 +76,7 @@
     }
 
     /* Clean text area */
-    if (hide-sponso) {
+    if (hide_sponso) {
         /*Nitro Gift popup textarea 🎁︎*/
         div[class*="-textArea"] + [class*="-buttons"] > div:not(.expression-picker-chat-input-button):first-child {
             display: none;
