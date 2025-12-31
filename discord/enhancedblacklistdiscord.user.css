@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.5.7
+@version        0.5.8
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var select better-blacklist     "Better Blacklist (Experimental)   🧹" {
+@var select better_blacklist     "Better Blacklist (Experimental)   🧹" {
     "Large": "2",
     "CSS4 (CPU+)": "4",
     "Light": "1",
@@ -22,7 +22,7 @@
     /* Others Skins : https://userstyles.world/user/Atlantis#styles */
 
     /* BETTER BLACK LIST (BETA/TEST) */
-    if (better-blacklist >= 1) {
+    if (better_blacklist >= 1) {
         /*HIDE BLOC MESSAGE with marging*/
         .visual-refresh ol[class*="scrollerInner"] [class*="blockedSystemMessage"] {
           display: none;
@@ -37,7 +37,7 @@
         }
     }
 
-    if (better-blacklist >= 2) {
+    if (better_blacklist >= 2) {
         /*HIDE BLOC MESSAGE without marging MORE AGRESSIVE*/
         .visual-refresh ol[class*="scrollerInner"] > div[class$="-groupStart"]:not([data-flash]),
         .visual-refresh ol[class*="scrollerInner"] > div[class^="groupStart_"]:not([data-flash]) {
@@ -50,7 +50,7 @@
         }
     }
 
-    if (better-blacklist == 2) {
+    if (better_blacklist == 2) {
         /* HIDE CITATION BL*/
         .visual-refresh ol[class*="scrollerInner"] div[class*="replyBadge"],
         .visual-refresh ol[class*="scrollerInner"] div[class*="replyBadge"] ~ :not(.replyAvatar) {
@@ -75,7 +75,7 @@
 
     }
 
-    if (better-blacklist == 4) {
+    if (better_blacklist == 4) {
         /* HIDE CITATION BL HAS:CSS4 */
         .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"]:has(> div[class*="replyBadge"] + span[class*="username"]) {
             display: none;
