@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.5.8
+@version        0.6.0
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -24,52 +24,51 @@
     /* BETTER BLACK LIST (BETA/TEST) */
     if (better_blacklist >= 1) {
         /*HIDE BLOC MESSAGE with marging*/
-        .visual-refresh ol[class*="scrollerInner"] [class*="blockedSystemMessage"] {
+        .visual-refresh ol[class*="-scrollerInner"] [class*="-blockedSystemMessage"] {
           display: none;
         }
         /*HIDE PROFILE-POPOUT menu right (Content)*/
-        .user-profile-popout img[class*="preview"] + div[class*="body"] {
+        .user-profile-popout img[class*="-preview"] + div[class*="-body"] {
             display: none;
         }
         /*HIDE PROFILE-MODAL-BL*/
-        .user-profile-modal-v2 > div[class*="inner"] > div[class*="background"]:not([class*="backgroundImage"]) ~ div {
+        .user-profile-modal-v2 > div[class*="-inner"] > div[class*="-background"]:not([class*="-backgroundImage"]) ~ div {
             display : none;
         }
     }
 
     if (better_blacklist >= 2) {
         /*HIDE BLOC MESSAGE without marging MORE AGRESSIVE*/
-        .visual-refresh ol[class*="scrollerInner"] > div[class$="-groupStart"]:not([data-flash]),
-        .visual-refresh ol[class*="scrollerInner"] > div[class^="groupStart_"]:not([data-flash]) {
+        .visual-refresh ol[class*="-scrollerInner"] > div[class*="-groupStart"]:not([data-flash]) {
           display: none;
         }
 
         /*HIDE PROFILE-MODAL-BL*/
-        div[class*="focusLock"]:not([aria-labelledby]) > div[class*="rootWithShadow"] > .user-profile-modal-v2:first-child {
+        div[class*="-focusLock"]:not([aria-labelledby]) > div[class*="-rootWithShadow"] > .user-profile-modal-v2:first-child {
             display : none;
         }
     }
 
     if (better_blacklist == 2) {
         /* HIDE CITATION BL*/
-        .visual-refresh ol[class*="scrollerInner"] div[class*="replyBadge"],
-        .visual-refresh ol[class*="scrollerInner"] div[class*="replyBadge"] ~ :not(.replyAvatar) {
+        .visual-refresh ol[class*="-scrollerInner"] div[class*="-replyBadge"],
+        .visual-refresh ol[class*="-scrollerInner"] div[class*="-replyBadge"] ~ :not(.replyAvatar) {
             display: none;
         }
         /*catch spin bar in revert CSS3*/
-        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"] > div[class*="ClickableSpine"]:nth-last-of-type(3) {
+        .visual-refresh ol[class*="-scrollerInner"] div[class*="-repliedMessage"] > div[class*="ClickableSpine"]:nth-last-of-type(3) {
              display: none;
         }
 
         /* OVERRIDE CSS RULE value for delete message CSS3*/
-        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"] > div[class*="replyBadge"]:nth-last-child(2),
-        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"] > div[class*="replyBadge"] + div[class*="repliedTextPreview"],
-        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"] > div[class*="ClickableSpine"]:nth-last-child(3) {
+        .visual-refresh ol[class*="-scrollerInner"] div[class*="-repliedMessage"] > div[class*="-replyBadge"]:nth-last-child(2),
+        .visual-refresh ol[class*="-scrollerInner"] div[class*="-repliedMessage"] > div[class*="-replyBadge"] + div[class*="-repliedTextPreview"],
+        .visual-refresh ol[class*="-scrollerInner"] div[class*="-repliedMessage"] > div[class*="ClickableSpine"]:nth-last-child(3) {
              display: inherit !important;
         }
 
         /*HIDE PROFILE-POPOUT menu right MORE AGRESSIVE*/
-        .user-profile-popout div[class*="inner"] > div[class*="container"] > img[class*="preview"] {
+        .user-profile-popout div[class*="-inner"] > div[class*="-container"] > img[class*="-preview"] {
              display: none;
         }
 
@@ -77,17 +76,17 @@
 
     if (better_blacklist == 4) {
         /* HIDE CITATION BL HAS:CSS4 */
-        .visual-refresh ol[class*="scrollerInner"] div[class*="repliedMessage"]:has(> div[class*="replyBadge"] + span[class*="username"]) {
+        .visual-refresh ol[class*="-scrollerInner"] div[class*="-repliedMessage"]:has(> div[class*="-replyBadge"] + span[class*="-username"]) {
             display: none;
         }
 
         /*HIDE PROFILE-POPOUT HAS:CSS4 */
-        .user-profile-popout:has(> div[class*="inner"] > div[class*="container"] > img[class*="preview"]) {
+        .user-profile-popout:has(> div[class*="-inner"] > div[class*="-container"] > img[class*="-preview"]) {
             display: none;
         }
 
         /*HIDE PROFILE-MODAL-BL*/
-        div[class*="scrim"]:has(+ div[class*="layer"] > div[class*="focusLock"]:not([aria-labelledby]) > div[class*="rootWithShadow"] > .user-profile-modal-v2:first-child) {
+        div[class*="-scrim"]:has(+ div[class*="-layer"] > div[class*="-focusLock"]:not([aria-labelledby]) > div[class*="-rootWithShadow"] > .user-profile-modal-v2:first-child) {
             opacity : 0 !important;
         }
     }
