@@ -15,7 +15,7 @@
 ## Skin Discord (GitHub Link)
 
 </p>
-  <a href="https://raw.githubusercontent.com/Lantea-Git/Skin_CSS/main/discord/enhancedblacklistdiscord.user.css">
+  <a href="../../raw/main/discord/enhancedblacklistdiscord.user.css">
     <!-- <img src="https://img.shields.io/badge/Discord%20(Test)-BlackList-8A93F5?style=flat&logo=github" alt="BlackList" width="300"> -->
     <img src="https://badgen.net/badge/Discord (Test)/BlackList/8A93F5?icon=github&scale=2" alt="BlackList">
   </a>
@@ -25,3 +25,4 @@
 <sub>**The skin of blacklist is now only on GitHub**, because it's not stable</sub>     
 <sub>and It has reached the limits of what is possible with only CSS...</sub>    
 
+<img src="https://i.ibb.co/XmDgPm8/Black-List-Discord-C.png" width="400">
