@@ -1,21 +1,21 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        5.6.2
+@version        5.6.6
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var select with_inbox      "Top-right Buttons 📥︎" {
-    "Default * ": "1",
-    "Minimal (Only Inbox)": "0",
-}
 @var select ads_filtering   "Hide Extras in textarea  🎁︎❖" {
     "None * ": "0",
     "Nitro bouton 🎁︎": "1" ,
     "Nitro + Apps bouton 🎁︎❖": "2" ,
+}
+@var select no_status_warning      "Hide Alert when Invisible ⦿" {
+    "None * ": "0",
+    "Hide Icon ⦿": "1",
 }
 
 ==/UserStyle== */
@@ -70,19 +70,6 @@
 
     /*---Optional---------*/
 
-    /* ADD bouton and spaces in search bar */
-    /* NEED :has() */
-    if (with_inbox) {
-        /* Try Show other bouton when with_inbox => on - IF the bouton exist*/
-        .visual-refresh [class*="bar"]:has(> div) [class*="trailing"] > div:first-child:not([data-jump-section="global"]) {
-            display: flex !important;
-        }
-        /*ADD Space for Event bouton in search bar IF the bouton exist*/
-        .visual-refresh [class*="bar"]:has([class*="trailing"] > div:first-child:not([data-jump-section="global"])) + [class*="content"] div[class*="upperContainer"] {
-            margin-right: 90px;
-        }
-    }
-
     /* Clean text area */
     if (ads_filtering >= 1) {
         /*Nitro Gift popup textarea 🎁︎*/
@@ -94,6 +81,13 @@
         /*Hide App/Sponsors ❖*/
         .app-launcher-entrypoint[class*="buttonContainer"] {
             display: none;
+        }
+    }
+
+    if (no_status_warning) {
+        /* Hide status Warning if you are Invisible */
+        .user-profile-popout div[class*="container"] > svg {
+            display : none;
         }
     }
 
