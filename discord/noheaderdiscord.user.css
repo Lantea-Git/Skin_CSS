@@ -1,21 +1,21 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        5.6.7
+@version        5.6.9
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var select ads_filtering   "Hide Extras in textarea  🎁︎❖" {
+@var select ads_filtering   "Also Hide in textarea  🎁︎❖" {
     "None * ": "0",
     "Nitro bouton 🎁︎": "1" ,
     "Nitro + Apps bouton 🎁︎❖": "2" ,
 }
-@var select no_status_warning      "Hide Alert when Invisible ⦿" {
+@var select no_status_warning      "Also Hide Alert Invisible ⦿" {
     "None * ": "0",
-    "Hide Icon ⦿": "1",
+    "Hide Warning Icon ⦿": "1",
 }
 
 ==/UserStyle== */
