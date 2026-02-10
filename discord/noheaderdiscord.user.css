@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        5.6.9
+@version        5.7.0
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
-@var select ads_filtering   "Also Hide in textarea  🎁︎❖" {
+@var select ads_filtering          "Also Hide in textarea  🎁︎❖" {
     "None * ": "0",
     "Nitro bouton 🎁︎": "1" ,
     "Nitro + Apps bouton 🎁︎❖": "2" ,
@@ -24,45 +24,45 @@
     /*-----BAR-HIDE-START------*/
 
     /*Redifine Layout grid - hide header*/
-    .visual-refresh [class*="base"] {
+    .visual-refresh [class^="base_"] {
         /*grid-template-rows: ... --custom-app-top-bar-height ...*/
         --custom-app-top-bar-height : 0px;
     }
     /* hide top bar elements without changing space (Optimise compatibility with others transparency) */
-    .visual-refresh [class*="base"] > [class*="bar"] > *:not([class*="trailing"]) {
+    .visual-refresh [class^="base_"] > [class^="bar_"] > *:not([class^="trailing_"]) {
         visibility: hidden;
     }
 
     /* Only inbox in "traling" */
-    .visual-refresh [class*="trailing"] > div:not([data-jump-section="global"]),
-    .visual-refresh [class*="trailing"] > a {
+    .visual-refresh [class^="trailing_"] > div:not([data-jump-section="global"]),
+    .visual-refresh [class^="trailing_"] > a {
         display: none;
     }
     /*Replace Inbox*/
-    .visual-refresh [class*="trailing"] {
+    .visual-refresh [class^="trailing_"] {
         height: 0; /* Avoid layout collision (legacy CSS): no effect on paint or interact */
         top: 24px;
         z-index: 500;
     }
 
     /*Change space for Inbox */
-    .visual-refresh div[class*="upperContainer"] {
+    .visual-refresh div[class^="upperContainer_"] {
         margin-right: 43px;
     }
 
     /* OVERRIDE CSS RULE => MOD menu open => Clean space */
-    .visual-refresh div[class*="threadSidebarOpen"] div[class*="upperContainer"] {
+    .visual-refresh div[class*="threadSidebarOpen_"] div[class^="upperContainer_"] {
         margin-right: initial !important;
     }
 
     /*MOD menu, notice above inbox*/
-    .visual-refresh [class*="guildSidebar"],
-    .visual-refresh div[class*="bar"] + div[class*="notice"] {
+    .visual-refresh [class^="guildSidebar_"],
+    .visual-refresh div[class^="bar_"] + div[class^="notice_"] {
         z-index: 600;
     }
 
     /*Margin top left Serv Lists*/
-    .visual-refresh [class*="sidebar"] > [class*="guilds"] {
+    .visual-refresh [class^="sidebar_"] > [class*="guilds_"] {
         margin-top: 10px;
     }
     /*-----BAR-HIDE-END------*/
@@ -73,20 +73,20 @@
     /* Clean text area */
     if (ads_filtering >= 1) {
         /*Nitro Gift popup textarea 🎁︎*/
-        div[class*="textArea"] + [class*="buttons"] > div:not(.expression-picker-chat-input-button):first-child {
+        div[class^="textArea_"] + [class^="buttons_"] > div:not(.expression-picker-chat-input-button):first-child {
             display: none;
         }
     }
      if (ads_filtering == 2) {
         /*Hide App/Sponsors ❖*/
-        .app-launcher-entrypoint[class*="buttonContainer"] {
+        .app-launcher-entrypoint[class^="buttonContainer_"] {
             display: none;
         }
     }
 
     if (no_status_warning) {
         /* Hide status Warning if you are Invisible */
-        .user-profile-popout div[class*="menus"] div[class*="container"] > svg {
+        .user-profile-popout div[class^="menus_"] div[class^="container_"] > svg {
             display : none;
         }
     }
