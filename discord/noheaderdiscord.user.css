@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        5.7.9
+@version        5.8.1
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
@@ -67,6 +67,17 @@
         margin-top: 10px;
     }
     /*-----BAR-HIDE-END------*/
+
+
+    /*-----Meadow-Event------*/
+    .visual-refresh [class^="bar_"]:has(> div) [class^="trailing_"] > div:first-of-type:not([class]) {
+        display: block !important;
+    }
+    /*ADD Space for Event bouton in search bar IF the bouton exist*/
+    .visual-refresh [class^="bar_"]:has([class^="trailing_"] > div:first-of-type:not([class])) + [class^="content_"] div[class^="upperContainer_"] {
+        margin-right: 73px;
+    }
+    /*-----Meadow-Event------*/
 
 
     /*---Optional---------*/
