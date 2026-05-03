@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.8.5
+@version        0.9.0
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -27,7 +27,7 @@
         .visual-refresh ol[class^="scrollerInner_"] [class^="blockedSystemMessage"] {
           display: none;
         }
-        /*HIDE PROFILE-POPOUT menu right (Content)*/
+        /*HIDE PROFILE-CARD menu right (Content)*/
         .user-profile-popout img[class^="preview_"] + div[class^="body_"] {
             display: none;
         }
@@ -44,7 +44,7 @@
         }
 
         /*HIDE PROFILE-MODAL-BL*/
-        div[class^="focusLock_"]:not([aria-labelledby]) > div[class*="rootWithShadow_"] > .user-profile-modal-v2:first-child {
+        div[class^="focusLock_"]:not([aria-labelledby]) > div[class*="rootWithShadow_"] {
             display : none;
         }
     }
@@ -70,7 +70,7 @@
              display: inherit !important;
         }
 
-        /*HIDE PROFILE-POPOUT menu right MORE AGRESSIVE*/
+        /*HIDE PROFILE-CARD menu right MORE AGRESSIVE*/
         .user-profile-popout div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"] {
              display: none;
         }
@@ -83,7 +83,7 @@
             display: none;
         }
 
-        /*HIDE PROFILE-POPOUT HAS:CSS4 */
+        /*HIDE PROFILE-CARD HAS:CSS4 */
         .user-profile-popout:has(> div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"]) {
             display: none;
         }
