@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.9.1
+@version        0.9.5
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -27,7 +27,7 @@
         .visual-refresh ol[class^="scrollerInner_"] [class^="blockedSystemMessage"] {
           display: none;
         }
-        /*HIDE PROFILE-POPOUT menu right (Content)*/
+        /*HIDE PROFILE-CARD menu right (Content)*/
         .user-profile-popout img[class^="preview_"] + div[class^="body_"] {
             display: none;
         }
@@ -37,19 +37,20 @@
         }
     }
 
+    if (better_blacklist == 2) {
+        /* OVERRIDE CSS RULE value for delete message CSS3*/
+        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"]:nth-last-child(2),
+        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"] + div[class^="repliedTextPreview_"],
+        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-child(3) {
+             display: inherit !important;
+        }
+    }
     if (better_blacklist >= 2) {
         /*HIDE BLOC MESSAGE without marging MORE AGRESSIVE*/
         .visual-refresh ol[class^="scrollerInner_"] > div[class^="groupStart_"]:not([data-flash]) {
           display: none;
         }
 
-        /*HIDE PROFILE-MODAL-BL*/
-        div[class^="focusLock_"]:not([aria-labelledby]) > div[class*="rootWithShadow_"] > .user-profile-modal-v2:first-child {
-            display : none;
-        }
-    }
-
-    if (better_blacklist >= 2) {
         /* HIDE CITATION BL*/
         .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"],
         .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"] ~ span,
@@ -60,21 +61,15 @@
         .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-of-type(3) {
              display: none;
         }
-    }
-    if (better_blacklist == 2) {
 
-        /* OVERRIDE CSS RULE value for delete message CSS3*/
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"]:nth-last-child(2),
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"] + div[class^="repliedTextPreview_"],
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-child(3) {
-             display: inherit !important;
+        /*HIDE PROFILE-MODAL-BL*/
+        div[class^="focusLock_"]:not([aria-labelledby]) > div[class*="root_"][class*=" root__"] {
+            display : none;
         }
-
-        /*HIDE PROFILE-POPOUT menu right MORE AGRESSIVE*/
+        /*HIDE PROFILE-CARD menu right MORE AGRESSIVE*/
         .user-profile-popout div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"] {
              display: none;
         }
-
     }
 
     if (better_blacklist == 4) {
@@ -83,7 +78,7 @@
             display: none;
         }
 
-        /*HIDE PROFILE-POPOUT HAS:CSS4 */
+        /*HIDE PROFILE-CARD HAS:CSS4 */
         .user-profile-popout:has(> div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"]) {
             display: none;
         }
