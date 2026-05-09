@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.9.5
+@version        0.9.6
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord.
 @author         Atlantis
@@ -63,7 +63,7 @@
         }
 
         /*HIDE PROFILE-MODAL-BL*/
-        div[class^="focusLock_"]:not([aria-labelledby]) > div[class*="root_"][class*=" root__"] {
+        div[class^="focusLock_"]:not([aria-labelledby]) > div[class^="root_"][class*=" root__"] {
             display : none;
         }
         /*HIDE PROFILE-CARD menu right MORE AGRESSIVE*/
