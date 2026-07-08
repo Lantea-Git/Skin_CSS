@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        1.0.0
+@version        1.0.1
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
 @description    Enhanced Blacklist for Discord (Need :Has).
 @author         Atlantis
@@ -21,7 +21,7 @@
     /* Others Skins : https://userstyles.world/user/Atlantis#styles */
 
     /* BETTER BLACK LIST (BETA/TEST) */
-    if (better_blacklist >= 1) {
+    if (better_blacklist == 1) {
         /*HIDE BLOC MESSAGE with marging*/
         .visual-refresh ol[class^="scrollerInner_"] [class^="blockedSystemMessage"] {
             display: none;
