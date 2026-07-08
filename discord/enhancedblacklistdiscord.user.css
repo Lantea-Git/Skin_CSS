@@ -1,16 +1,15 @@
 /* ==UserStyle==
 @name           Enhanced_Blacklist_Discord
 @namespace      enhancedblacklistdiscord
-@version        0.9.6
+@version        1.0.0
 @updateURL      https://github.com/Lantea-Git/Skin_CSS/raw/main/discord/enhancedblacklistdiscord.user.css
-@description    Enhanced Blacklist for Discord.
+@description    Enhanced Blacklist for Discord (Need :Has).
 @author         Atlantis
 @license        CC0-1.0
 @preprocessor   stylus
 
 @var select better_blacklist     "Better Blacklist (Experimental)   🧹" {
-    "Large": "2",
-    "CSS4 (CPU+)": "4",
+    "Large (:HAS)": "2",
     "Light": "1",
     "Disable": "0",
 }
@@ -25,66 +24,38 @@
     if (better_blacklist >= 1) {
         /*HIDE BLOC MESSAGE with marging*/
         .visual-refresh ol[class^="scrollerInner_"] [class^="blockedSystemMessage"] {
-          display: none;
+            display: none;
         }
-        /*HIDE PROFILE-CARD menu right (Content)*/
+        /*HIDE PROFILE-CARD menu right (IMG)*/
         .user-profile-popout img[class^="preview_"] + div[class^="body_"] {
             display: none;
         }
-        /*HIDE PROFILE-MODAL-BL*/
+        /*HIDE PROFILE-MODAL-IMG*/
         .user-profile-modal-v2 > div[class^="inner_"] > div[class^="background_"]:not([class*="backgroundImage"]) ~ div {
             display : none;
         }
     }
 
-    if (better_blacklist == 2) {
-        /* OVERRIDE CSS RULE value for delete message CSS3*/
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"]:nth-last-child(2),
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class^="replyBadge_"] + div[class^="repliedTextPreview_"],
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-child(3) {
-             display: inherit !important;
-        }
-    }
-    if (better_blacklist >= 2) {
+    if (better_blacklist == 2) { /*HAS:CSS Level 4*/
         /*HIDE BLOC MESSAGE without marging MORE AGRESSIVE*/
-        .visual-refresh ol[class^="scrollerInner_"] > div[class^="groupStart_"]:not([data-flash]) {
-          display: none;
-        }
-
-        /* HIDE CITATION BL*/
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"],
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"] ~ span,
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="replyBadge_"] ~ div {
+        .visual-refresh ol[class^="scrollerInner_"] > div[class^="groupStart_"]:has([class^="blockedSystemMessage"]) {
             display: none;
         }
-        /*catch spin bar in revert CSS3*/
-        .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"] > div[class*="ClickableSpine_"]:nth-last-of-type(3) {
-             display: none;
-        }
-
-        /*HIDE PROFILE-MODAL-BL*/
-        div[class^="focusLock_"]:not([aria-labelledby]) > div[class^="root_"][class*=" root__"] {
-            display : none;
-        }
-        /*HIDE PROFILE-CARD menu right MORE AGRESSIVE*/
-        .user-profile-popout div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"] {
-             display: none;
-        }
-    }
-
-    if (better_blacklist == 4) {
-        /* HIDE CITATION BL HAS:CSS4 */
+        /* HIDE CITATION BL */
         .visual-refresh ol[class^="scrollerInner_"] div[class^="repliedMessage_"]:has(> div[class^="replyBadge_"] + span[class^="username_"]) {
             display: none;
         }
-
-        /*HIDE PROFILE-CARD HAS:CSS4 */
+        /*HIDE PROFILE-CARD */
         .user-profile-popout:has(> div[class^="inner_"] > div[class^="container_"] > img[class^="preview_"]) {
             display: none;
         }
 
         /*HIDE PROFILE-MODAL-BL*/
-        div[class^="scrim_"]:has(+ div[class^="layer_"] > div[class^="focusLock_"]:not([aria-labelledby]) > div[class*="rootWithShadow_"] > .user-profile-modal-v2:first-child) {
+        div[class^="scrim_"] + div[class^="layer_"]:has(.user-profile-modal-v2:first-child) {
+            opacity : 0 !important;
+        }
+        /*HIDE PROFILE-MODAL-BACK-DROP-BL*/
+        div[class^="scrim_"]:has(+ div[class^="layer_"] .user-profile-modal-v2:first-child) {
             opacity : 0 !important;
         }
     }
