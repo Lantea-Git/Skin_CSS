@@ -12,7 +12,9 @@
   </a>
 </p>
 
-## Skin Discord (GitHub Link)
+## Skin Discord (GitHub Link) 
+
+**Need :HAS (2023)**
 
 </p>
   <a href="../../raw/main/discord/enhancedblacklistdiscord.user.css">
