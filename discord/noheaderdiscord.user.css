@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           No_Header_Discord_Pub
 @namespace      noheaderdiscordpub
-@version        5.9.4
+@version        5.9.5
 @updateURL      https://userstyles.world/api/style/21588.user.css
 @description    Remove the ad tabs and the top layout on Discord.
 @author         Atlantis
@@ -34,8 +34,7 @@
     }
 
     /* Only inbox in "traling" */
-    .visual-refresh [class^="trailing_"] > div:not([class^="iconWrapper_"]), /*Exclude With CSS class*/
-    .visual-refresh [class^="trailing_"] > div:not(:last-of-type), /*Exclude With DIV Position FallBack */
+    .visual-refresh [class^="trailing_"] > div:not([class^="iconWrapper_"]):not(:last-of-type), /*Exclude With CSS class and DIV Position (FallBack) */
     .visual-refresh [class^="trailing_"] > a {
         display: none;
     }
